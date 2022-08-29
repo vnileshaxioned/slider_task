@@ -89,5 +89,11 @@ function addSlide(slideCount) {
 // to remove active class from slide and dot
 function removeSlide(slideCount) {
   slides[slideCount].classList.remove('slider-list-active');
+  slides.forEach(function (slide) {
+    if (slide.classList.contains('slider-list-prev')) {
+      slide.classList.remove('slider-list-prev');
+    }
+  })
+  slides[slideCount].classList.add('slider-list-prev');
   sliderDot[slideCount].classList.remove('slider-dot-active');
 }
